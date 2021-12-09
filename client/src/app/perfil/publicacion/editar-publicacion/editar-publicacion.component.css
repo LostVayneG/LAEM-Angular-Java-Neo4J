@@ -1,0 +1,320 @@
+
+/*=========================*/
+/* Se aplica a todo */
+/*=========================*/
+
+*{
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  font-family: 'fuente';
+}
+
+/* --------------------------------------------------------
+          Contenedor del contenido completoo
+-------------------------------------------------------- */
+
+.contenedorCrearPublicacion{
+  margin-top: 55px;
+  margin-left: 60px;
+}
+
+.formularioPublicar{
+  display: flex;
+  flex-direction: row;
+}
+
+/* --------------------------------------------------------
+                  Contenedor izquierdo
+-------------------------------------------------------- */
+.contenedorIzquierdo{
+  width: 20%;
+  padding: 20px;
+  border-right: 1px dashed gray ;
+  border-top-right-radius: 10px;
+}
+
+.tituloIzquierda{
+  font-size: x-large;
+  /* text-shadow: 0 0 30px #eb820b; */
+
+}
+
+
+.labelsText{
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+
+}
+.labelsText img{
+  width: 10%;
+  height: 10%;
+  margin-right: 15px;
+
+}
+
+.campoText {
+  width: 80%;
+  margin-left: 7%;
+  border-style: none;
+  border-bottom-style: solid;
+  border-bottom-color: rgb(146, 146, 146);
+  margin-bottom: 3%;
+  text-align: center;
+
+}
+
+.comboBoxPais{
+  border: 1px solid #ccc;
+  width: 80%;
+  overflow: hidden;
+  background-color: #fff;
+  border-bottom-color: rgb(146, 146, 146);
+  border-radius: 10px;
+  margin-left:20px;
+  margin-bottom: 10px;
+}
+
+.labelsTextEtiquetas{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnAñadirItem{
+
+  border-style: solid;
+  border-color: hsl(0, 0%, 100%);
+  background-color:  #f69314;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+
+}
+.btnAñadirItem img{
+  width: 15px;
+  height: 15px;
+  vertical-align: middle;
+}
+
+.btnAñadirItem:hover{
+  background-color:  #a5630d;
+}
+
+.listaEtiquetas{
+  list-style: none;
+
+}
+
+.listaEtiquetas li::before{
+  color: #f69314;
+  content: "\0023";
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+
+
+/* --------------------------------------------------------
+                  Contenedor derecho
+-------------------------------------------------------- */
+
+.contenedorDerecho{
+  background-color: rgb(246, 245, 245);
+  width: 80%;
+  border-left: 1px dashed gray;
+  border-top-left-radius: 10px;
+  padding: 20px;
+  padding-left: 30px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.descripcion{
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+
+}
+
+.txtTituloReceta{
+  font-size: xx-large;
+}
+
+.contenedoresDerecha{
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  margin-bottom: 5px;
+  padding-bottom: 20px;
+}
+
+
+.inputDescripcion{
+  width: 80%;
+  height: 100px;
+  border-style: none;
+  margin-bottom: 30px;
+  background-color: rgb(246, 245, 245);
+}
+
+
+.TituloContenedores{
+  text-align: center;
+  font-size: x-large;
+  margin-bottom: 10px;
+}
+
+
+.lblInputItem{
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.contenedorLista{
+  display: flex;
+  width: 70%;
+  justify-content: left;
+  margin-left: 20px;
+}
+
+
+.listaItems{
+  list-style: none;
+}
+
+.listaItems li::before{
+  color: #f69314;
+  content: "\1f37D";
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+
+
+ol {
+  list-style: none;
+  counter-reset: my-awesome-counter;
+}
+ol li {
+  counter-increment: my-awesome-counter;
+}
+ol li::before {
+  content: counter(my-awesome-counter) ". ";
+  color: #f69314;
+  font-weight: bold;
+}
+
+li:hover{
+  color: red;
+}
+
+
+/* Subir archivo */
+
+
+
+
+#contenedorSubirArchivo {
+  /* background-image: url("/assets/images/Prueba.png"); */
+  background-repeat: no-repeat;
+  background-position: 5% center;
+  background-size: 100%;
+  height: 150px;
+}
+
+.dentroContenedorSubirArchivo {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+
+.imagenNube {
+  width: 80px;
+  height: 80px;
+}
+
+.elegirArchivo {
+  padding-left: 15%;
+}
+
+.btnSubirArchivo{
+  border-radius: 20px;
+  width: 100%;
+  border-style: solid;
+  border-color: #ffffff;
+  background-color:  #f69314;
+  color: #ffffff;
+  transition: .3s;
+  font-size: 20px;
+  display:none;
+
+}
+
+.btnSubirArchivo:hover{
+  transform: scale(1.05);
+  background-color: #b17113;
+}
+
+.btnFinal{
+  border-radius: 20px;
+  width: 20%;
+  border-style: solid;
+  border-color: #ffffff;
+  background-color:  #f69314;
+  color: #ffffff;
+  transition: .3s;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.btnFinal:hover{
+  transform: scale(1.05);
+  background-color: #b17113;
+}
+
+
+/* Subir archivo 2.0 */
+
+
+.custom-input-file {
+  background-color: #941B80;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 auto 0;
+  min-height: 15px;
+  overflow: hidden;
+  padding: 10px;
+  position: relative;
+  text-align: center;
+  width: 400px;
+}
+
+.custom-input-file .input-file {
+ border: 10000px solid transparent;
+ cursor: pointer;
+ font-size: 10000px;
+ margin: 0;
+ opacity: 0;
+ outline: 0 none;
+ padding: 0;
+ position: absolute;
+ right: -1000px;
+ top: -1000px;
+}
+
+.lblSubirArchivo p{
+  margin-top: 0;
+}

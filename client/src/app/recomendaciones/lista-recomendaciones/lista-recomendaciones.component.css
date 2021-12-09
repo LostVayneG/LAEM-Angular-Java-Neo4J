@@ -1,0 +1,157 @@
+*{
+  box-sizing: 0;
+  top: 0;
+  left: 0;
+  font-family: 'fuente';
+}
+/*=====================
+ESTILO DE LA TABLA TOP
+=======================*/
+.contenedorTarjetas{
+  /*background-color: aqua;
+  Verificar porque no funciona margin-top*/
+  margin-left: 10%;
+  width: 70%;
+}
+.tablaTarjetas{
+  /* background-color: blueviolet; */
+  /* width:80%; */
+  border-collapse: separate;
+  border-spacing: 20px;
+}
+
+
+/*=====================
+  BUSQUEDA PAIS
+=======================*/
+.tarjetaBusquedaPais{
+  border-radius: 5px;
+  height:250px;
+  width:200px;
+  transform-style: preserve-3d;
+  transition: all 1s ease;
+  border-style: none;
+  -webkit-transform-style: preserve-3d;
+  -webkit-box-shadow: 2px 7px 5px 0px rgba(156,144,147,1);
+  -moz-box-shadow: 2px 7px 5px 0px rgba(156,144,147,1);
+  box-shadow: 2px 7px 5px 0px rgba(156,144,147,1);
+
+}
+
+/* Mensaje si no hay resultados*/
+.resultadoVacio{
+font-size: 30px;
+text-align: center;
+color: grey;
+}
+
+/*.tarjetaBusquedaPais:hover{
+  transform: rotateX(360deg) rotateY(180deg) rotateZ(360deg);
+ transform: rotateX(180deg) rotateZ(180deg);
+}*/
+
+/*=====================
+TARJETA FLIP PARTE FRONTAL
+=======================*/
+.tarjetaBusquedaPaisFrontal{
+  width: 100%;
+  backface-visibility: hidden;
+}
+
+.tarjetaBusquedaPais:hover{
+  transform: rotateY(180deg);
+}
+
+/*=====================
+IMAGEN FRONTAL TARJETA
+=======================*/
+.imagenTarjetaBusquedaPais{
+  object-fit: cover;
+  object-position: 50% 50%;
+  width: 100%;
+  height: 150px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  margin-bottom: -30px;
+  position: relative;
+  z-index: 0;
+}
+/*====================================
+CONTENEDOR ELIPSOIDAL CELESTE INFERIOR
+======================================*/
+.tarjetaBusquedaPaisParteInferior{
+  background-color: #6d0d42;
+  margin-top: 0;
+  width: 100%;
+  height: 130px;
+  position: relative;
+  z-index: 1;
+  border-top-right-radius: 100px 20px;
+  border-top-left-radius: 100px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/*=====================
+TEXTO SOMBRA FRONTAL
+=======================*/
+.sombraFrontal{
+  color: #ffffff;
+  text-shadow: 1px 2px 20px #000000;
+  font-size: 15px;
+}
+/*=====================
+CONTENEDOR VALORACION
+=======================*/
+.valoracionTarjetaBusquedaPais{
+  display: flex;
+  align-items: center;
+}
+.valoracionTarjetaBusquedaPais img{
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+
+/*=====================
+TARJETA FLIP PARTE DORSAL
+=======================*/
+.tarjetaBusquedaPaisDorsal{
+  background-color: #3d3b3b;
+  height: 260px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin-top: -260px;
+  border-radius: 5px;
+  z-index: 2;
+  transform: rotateY(180deg);
+}
+/*=====================
+TEXTO SOMBRA DORSAL
+=======================*/
+.sombra{
+  color: #dbcfcf;
+  text-shadow: 0 0 30px #ffffff;
+  font-size: 13px;
+}
+/*=====================
+LISTA DE ETIQUETAS DORSAL
+=======================*/
+.listaTarjetaEtiquetas{
+  list-style: none;
+  align-items: center;
+  display: inline-block;
+  align-items: left;
+  margin-right: 40px;
+}
+
+.etiquetaTarjeta{
+  text-align:center;
+  width: 100%;
+  margin-bottom: 0;
+}

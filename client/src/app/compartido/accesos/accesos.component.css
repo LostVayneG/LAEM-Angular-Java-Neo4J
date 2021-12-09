@@ -1,0 +1,121 @@
+
+/*=========================*/
+/* FUENTES DE LA PAGINA */
+/*=========================*/
+@font-face{
+  font-family: "fuentePagina";
+  src: url(/assets/fonts/Gotu/Gotu-Regular.ttf);
+}
+
+/*=========================*/
+/* SE APLICA A TODO */
+/*=========================*/
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "fuentePagina";
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/*=========================*/
+/* MENU DE ACCESOS */
+/*=========================*/
+
+/*Estilo de panel de los accesos*/
+.contenedorAccesos{
+  position: fixed;
+  margin-top: 10%;
+}
+
+/*Estilo de la lista de los items*/
+.menuAccesosLista{
+  /*width: 100%; /*PROHIBIDO DESCOMENTAR ESTA LINEA, SI SE DESCOMENTA HAY TABLA*/
+  margin-left: 86%;
+  padding-top: 2%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: fixed;
+  height: 50%;
+}
+
+/*Estilo de los items*/
+.menuAccesosItems{
+  position: relative;
+  transform: translateX(10px);
+  background: #ff9b18;
+  list-style: none;
+  padding: 5px 0;
+  transition: .2s;
+  width: 205px;
+  margin-top: 10px;
+  border-radius: 200px 0px 0px 200px;
+  cursor: pointer;
+}
+
+/*Estilo del header de los accesos*/
+.menuAccesosItemHeader{
+  position: relative;
+  background: #ff9b18;
+  list-style: none;
+  padding: 5px;
+  margin-bottom: 10px;
+  width: 210px;
+  border-radius: 200px 0px 0px 200px;
+}
+
+/*Colores que tomaran los items cuando se pase el mouse por encima*/
+.menuAccesosItems:hover:nth-child(2){
+  background: #c55243;
+}
+
+.menuAccesosItems:hover:nth-child(3){
+  background: #c55243;
+}
+
+.menuAccesosItems:hover:nth-child(4){
+  background: #c55243;
+}
+
+/*Transicion de los items cuando se pase por encima*/
+.menuAccesosItems:hover{
+  transform: translateX(0);
+  transform: scale(1.05);
+}
+
+/*Estilo de la letra de los items*/
+.menuAccesosItemsText{
+  font-weight: bold;
+  color: #fff;
+  font-family: 'fuentePagina';
+  font-weight: bold;
+  text-decoration: none;
+  padding-left: 10px;
+}
+
+/* Lo que pasa cuando se pasa el mouse por encima del texto */
+.menuAccesosItemsText:hover{
+  color: white;
+  text-decoration: none;
+}
+
+/*Estilo del header*/
+.menuAccesosItemHeaderText{
+  padding-left: 80px;
+  cursor: default;
+}
+
+/*Estilo de los iconos de los accesos*/
+.menuAccesosIconos{
+  margin-right: 5px;
+  width: 35px;
+  height: 35px;
+  padding: 4px 4px;
+  border-radius: 50%;
+  background: #b17213a2;
+  vertical-align: middle;
+}

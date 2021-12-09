@@ -1,0 +1,28 @@
+### Obtener publicación por id
+GET http://localhost:8081/publicaciones/2
+
+### Eliminar publicación por id
+DELETE http://localhost:8081/publicaciones/-2
+Content-Type: application/json
+
+### Crear publicación con idUsuario
+POST http://localhost:8081/publicaciones/
+Content-Type: application/json
+{
+    "titulo": "Taco",
+    "duracion": "20 min",
+    "fecha": null,
+    "descripcion": "Receta de taco",
+    "valoracion": null, // La valoración debe inicializarse en 0 desde el servidor, por eso aquí va null
+    //"etiquetas":["taco","mexicano"] // TODO Si se descomenta esta línea no bota error pero no se si sea la forma adecuada de manejar arreglos con HTTP
+}
+
+### Actualizar publicación 
+PUT http://localhost:8081/publicaciones/1
+Content-Type: application/json
+
+{
+    "titulo": "Taco",
+    "duracion": "20 min",
+    "descripcion": "Receta de taco"
+}

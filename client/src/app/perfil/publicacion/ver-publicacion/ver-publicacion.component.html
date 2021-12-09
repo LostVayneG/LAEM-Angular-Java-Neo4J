@@ -1,0 +1,129 @@
+<app-barra-navegacion></app-barra-navegacion>
+<app-accesos></app-accesos>
+
+<div class="verPublicacion">
+  <div class="publicacion">
+
+    <!-- Parte superior de la publicacion -->
+    <div class="publicacionImagen">
+      <img [src]="imagen" class="publicacionImg" alt="">
+      <img *ngIf="miPublicacion == true" (click)="redirigir()" src="/assets/icons/IconLapiz.png" class="publicacionImgEditar" alt="" />
+		</div>
+
+    <!-- Seccion datos del usuario -->
+    <div class="publicacionDatosUsuario">
+      <a class="publicacionUsuario" [routerLink]="['/perfil/ver', publicacion.chef.id]">
+				<img src="/assets/icons/IconUsuarioNegro.png" class="imagenUsuario" alt="" />
+				{{publicacion.chef.nombre}}
+      </a>
+      <app-valoracion [publicacion]="publicacion"></app-valoracion>
+      <p class="publicacionFecha">{{publicacion.fecha}}</p>
+    </div>
+
+    <!-- Título y descripción de la publicación -->
+    <div class="favoritos" *ngIf="favorito==false">
+      <button (click)="agregarFavoritos()" class="botonFavoritos">Agregar a favoritos</button>
+    </div>
+    <div class="favoritos" *ngIf="favorito==true">
+        <button (click)="eliminarFavoritos()" class="botonFavoritos">Eliminar de favoritos</button>
+    </div>
+    <div class="informacionReceta">
+      <p class="publicacionTitulo">{{publicacion.titulo}}</p>
+      <iframe *ngIf="existeVideo == true"  width="95%" height="315" [src]='getURL()' frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <section *ngIf="existeDescripcion == true">
+        <b>Descripción</b>
+        <p class="publicacionDescripcion">
+          {{publicacion.descripcion}}
+        </p>
+      </section>
+      <section *ngIf="existeDuracion == true">
+        <b>Duración</b>
+        <p class="duracion">
+          {{publicacion.duracion}}
+        </p>
+      </section>
+      <section *ngIf="existeIngrediente == true">
+        <b>Ingredientes</b>
+        <ul class="listaItems">
+          <li *ngFor="let ingrediente of publicacion.ingredientes">
+            {{ingrediente}}
+          </li>
+        </ul>
+      </section>
+      <section *ngIf="existePasos == true">
+        <b>Procedimiento</b>
+        <ol class="listaPasos contenedorLista">
+          <li *ngFor="let paso of publicacion.preparacion">
+            {{paso}}
+          </li>
+        </ol>
+      </section>
+    </div>
+    
+
+  </div>
+  <!-- Seccion de comentarios de la publicación -->
+  <div class="contenedorComentarios">
+
+    <!-- Seccion de creación de comentarios -->
+    <div class="crearComentario">
+      <!-- Header de crear Comentario -->
+      <div class="headerCrearComentario">
+          <div>
+            <p class="headerComentarioTitulo">
+              Agregar un comentario
+            </p>
+          </div>
+          <!-- Usuario que esta comentando -->
+          <div class="headerComentarioUsuario">
+            <img class="imagenUsuarioComentario" src="/assets/icons/IconUsuarioNegro.png" alt="">
+            <p class="textoUsuarioComentario">
+              {{chef.nombre}}
+            </p>
+          </div>
+      </div>
+      <!-- Form crear comentario -->
+      <form>
+        <!-- Caja de texto del comentario -->
+        <div class="cajaCrearComentario">
+          <textarea [(ngModel)]="texto" placeholder="Escriba aqui su comentario..." name="comentario" class="textAreaComentario"></textarea>
+        </div>
+        <!-- Boton comentar -->
+        <button (click)="agregarComentario()" class="botonComentar">
+          Comentar
+        </button>
+      </form>
+    </div>
+
+    <!-- lista de comentarios -->
+    <div class="comentarios">
+        <img class="imagenComentarios" src="/assets/icons/IconComentarios.png" alt="">
+        <p>Comentarios</p>
+    </div>
+    <div>
+      <!-- lista de comentarios -->
+      <ul class="listaComentarios">
+        <!-- elemento de la lista de comentarios -->
+        <li *ngFor="let comentario of comentarios" class="elementoListaComentarios">
+          <!-- Nombre de usuario y fecha de publiacion del comentario -->
+          <div class="contenedorUsuarioComentario">
+            <img class="imagenUsuarioComentario"src="/assets/icons/IconUsuarioNegro.png" alt="">
+            <p class="nombreUsuario">{{comentario.chef.nickname}}</p>
+            <p class="fechaComentario">{{comentario.fecha}}</p>
+          </div>
+          <!-- Comentario de un chef -->
+          <div>
+            <p>{{comentario.texto}}</p>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+
+  </div>
+
+
+
+</div>
+
+

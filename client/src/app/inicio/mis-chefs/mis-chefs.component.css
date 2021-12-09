@@ -1,0 +1,28 @@
+*{
+    box-sizing: 0;
+    top: 0;
+    left: 0;
+    font-family: 'fuente';
+}
+/*=====================================
+        ENCABEZADO MIS CHEFS
+=======================================*/
+.encabezadoMisChefs{
+    margin-top: 70px;
+    margin-left: 80px;
+    width:80%;
+    height: 150px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Nota la imagen de background toca hacerle transparencia por aparte */
+    background-image: url('/assets/images/FondosHeader/HeaderMisChefs.png');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.tituloHeaderMisChefs{
+    z-index: 1;
+    font-size: 30px;
+    color:#000000;
+}

@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+/*=========================*/
+/* FUENTE */
+/*=========================*/
+@font-face{
+  font-family: 'fuente';
+  src: url(/assets/fonts/Gotu/Gotu-Regular.ttf);
+}
+
+app-root{
+    display: block;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+}
+/* Barra de navegacion */
+/* Menu de accesos */
+/* Menu de paises */

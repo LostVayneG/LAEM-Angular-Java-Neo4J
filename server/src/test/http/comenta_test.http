@@ -1,0 +1,2 @@
+### Obtener comentarios de publicacion
+GET http://localhost:8081/comentario/7

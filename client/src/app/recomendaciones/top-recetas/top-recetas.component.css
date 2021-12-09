@@ -1,0 +1,29 @@
+*{
+    box-sizing: 0;
+    top: 0;
+    left: 0;
+    font-family: 'fuente';
+}
+/*=====================================
+        ENCABEZADO TOP RECETAS
+=======================================*/
+.encabezadoTopRecetas{
+    margin-top: 70px;
+    margin-left: 80px;
+    width:80%;
+    height: 150px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Nota la imagen de background toca hacerle transparencia por aparte */
+    background-image: url('/assets/images/FondosHeader/WallpaperCevicheTopRecetas.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.tituloHeaderTopRecetas{
+    z-index: 1;
+    font-size: 30px;
+    color:#000000;
+}

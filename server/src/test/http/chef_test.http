@@ -1,0 +1,52 @@
+### Obtener usuario por id
+GET http://localhost:8081/chefs/5
+
+### Crear usuario (Registrarse)
+POST http://localhost:8081/register
+Content-Type: application/json
+
+{
+    "nickname": "chef",
+    "nombre": "ratatouille",
+    "contrasenia": "123",
+    "genero": "Hombre",
+    "celular": "999",
+    "valoracion": 30, 
+    "clasificacion": "plata", 
+    "numeroPublicaciones" : 0,
+    "numeroSeguidores" : 0,
+    "numeroSeguidos" : 0
+}
+
+### Actualizar usuario 
+PUT http://localhost:8081/chefs/1
+Content-Type: application/json
+
+{
+    "nickname": "crack",
+    "nombre": "Daniel",
+    "contrasenia": "elMejor",
+    "genero": "Hombre",
+    "celular": "123"
+}
+
+### Agregar seguidor de un usuario
+POST http://localhost:8081/chefs/0/1
+Content-Type: application/json
+
+{
+}
+
+### Eliminar seguidor de un usuario
+DELETE http://localhost:8081/chefs/0/1
+Content-Type: application/json
+
+{
+}
+
+### Obtener publicaciones de mis chefs o chefs seguidos
+GET http://localhost:8081/chefs/0/mischefs
+Content-Type: application/json
+
+{
+}

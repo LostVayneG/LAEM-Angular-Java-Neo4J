@@ -1,0 +1,54 @@
+<body>
+      <!-- Contenido de la pagina -->
+      <section class="contenido">
+          <p class="contenidoTitulo">¡Bienvenido!</p>
+          <p class="contenidoDescripcion">
+              En la red social LAEM, orientada no solo
+              a chefs profesionales, si no también a personas entusiastas de  la cocina, se puede:
+          </p>
+
+          <ul class="contenidoListaDescripcion">
+              <li class="contenidoListaDescripcionItem">
+                  <img class="listaDescripcionIcono" src="assets/images/LandingItemPublicarReceta.jpg" alt="">
+                  <p class="listaDescripcionItemTexto">
+                      Publicar Recetas
+                  </p>
+              </li>
+              <li class="contenidoListaDescripcionItem">
+                  <img class="listaDescripcionIcono" src="assets/images/LandingItemReceta.jpg" alt="">
+                  <p class="listaDescripcionItemTexto">
+                      Ver Recetas
+                  </p>
+              </li>
+              <li class="contenidoListaDescripcionItem">
+                  <img class="listaDescripcionIcono" src="assets/images/LandingItemChat.jpg" alt="">
+                  <p class="listaDescripcionItemTexto">
+                      Chatear
+                  </p>
+              </li>
+          </ul>
+
+          <p class="contenidoDescripcion">"Si eres un chef,
+              sin importar que tan bueno seas, de nada sirve cocinar para si mismo;
+              el gusto está en cocinar para otros" - Will.I.Am.</p>
+
+          <ul class="contenidoListaBotones">
+              <li class="contenidoItem">
+                  <button class="contenidoBotones">
+                      <a class="contenidoBotonTexto" [routerLink]="['/login']">
+                          <img class="contenidoIconos" src="assets/icons/IconEntrar.png" alt="">
+                          Iniciar Sesion
+                      </a>
+                  </button>
+              </li>
+              <li class="contenidoItem">
+                  <button class="contenidoBotones" >
+                      <a class="contenidoBotonTexto" [routerLink]="['/register']">
+                          <img class="contenidoIconos" src="assets/icons/IconRegistro.png" alt="">
+                          Registrarse
+                      </a>
+                  </button>
+              </li>
+          </ul>
+      </section>
+</body>

@@ -1,0 +1,9 @@
+<app-barra-navegacion></app-barra-navegacion>
+<app-accesos></app-accesos>
+<!-- Header Top Recetas -->
+<header class="encabezadoBusquedaPais">
+        <p class="tituloHeaderBusquedaPais">{{pais.nombre}}</p>
+        <p class="descripcionPais">{{pais.descripcion}} </p>
+</header>
+<app-lista-busqueda [resultados]="resultados" [imagen]="imagen"></app-lista-busqueda>
+

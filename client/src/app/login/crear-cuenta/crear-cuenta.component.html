@@ -1,0 +1,35 @@
+<body>
+    <!-- Contenedor crear cuenta -->
+    <section class="contenedorCrearCuenta">
+        <!-- Contenedor formulario-->
+        <h1 class="tituloFormulario">¡Crea tu cuenta en LAEM!</h1>
+            <!--Formulario-->
+            <form (ngSubmit)="registrar()" class="formulario">
+                <!--Formulario parte izquierda-->
+                <section class="contenedorFormulario">
+                <section class="contenedorSeccionFormularioIzquierdo">
+                    <p class="tituloSeccionFormulario">Datos cuenta:</p>
+                    <input [(ngModel)]="chef.nickname" class="txtForm" type="text" name="txtNickname" id="nickname" placeholder="Nickname">
+                    <input [(ngModel)]="chef.contrasenia" class="txtForm" type="password" name="passContraseña" id="pass" placeholder="Contraseña">
+                    <input [(ngModel)]="verificacionPassword" class="txtForm" type="password" name="passConfirmacion" id="confirm"placeholder="Confirmar contraseña">
+                </section>
+                <!--Formulario parte derecha-->
+                <section class="contenedorSeccionFormularioDerecho">
+                    <p>Datos personales:</p>
+                    <input [(ngModel)]="chef.nombre" class="txtForm" type="text" name="txtNombre" id="nombre" placeholder="Nombre completo">
+                    <section class="contenedorSeccionFomrularioDerechoRadio">
+                        <p class="textoGenero">Genero: </p>
+                        <select [(ngModel)]="chef.genero" name="generoChef" class="generoChef">
+                          <option value="Hombre">Hombre</option>
+                          <option value="Mujer">Mujer</option>
+                          <option value="Otro">Otro</option>
+                        </select>
+                    </section>
+                    <input [(ngModel)]="chef.celular" class="txtForm" type="text" name="txtCelular" id="celular" placeholder="Número de celular (Opcional)">
+                </section>
+                </section>
+                <span class="spanForm">{{ mensaje }}</span>
+                <button type="submit" class="botonRegistrar" name="btnRegistrar">Registrate</button>
+            </form>
+    </section>
+</body>

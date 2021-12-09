@@ -1,0 +1,298 @@
+
+/*=========================*/
+/* FUENTES DE LA PAGINA */
+/*=========================*/
+@font-face{
+  font-family: "fuentePagina";
+  src: url(/assets/fonts/Gotu/Gotu-Regular.ttf);
+}
+
+/*=========================*/
+/* SE APLICA A TODO */
+/*=========================*/
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "fuentePagina";
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/*=========================*/
+/* BARRA DE NAVEGACIÓN */
+/*=========================*/
+
+nav{
+  user-select: none;
+}
+
+/* Contenedor de la barra de navegacion */
+.barraNavegacion{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: #f69314;
+  width: 100%;
+  height: 50px;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+/* Decoracion tanto del logo como el texto LAEM */
+.barraNavegacionLogo{
+  color: #ffffff;
+  cursor: default;
+  text-decoration: none;
+  font-size: 25px;
+  margin-left: 10px;
+}
+
+/* Decoracion de la imagen del logo LAEM */
+.barraNavegacionLogo img{
+  width: 38px;
+  height: 38px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+/* Forma en que se presentan los items de la barra */
+.barraNavegacionLista{
+  list-style: none;
+  display: inline;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Decoracion de los items de la barra */
+.barraNavegacionItem{
+  margin-left: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+  transition: 0.8s;
+}
+
+.barraNavegacionItemAnimation:hover{
+  transform: scale(1.08);
+  background-color:  #b1721346;
+  border-radius: 10px;
+}
+
+/* Decoracion del item logo de la barra de navegacion */
+.barraNavegacionItemLogo{
+  display: inline-block;
+  margin-left: 10px;
+}
+
+/* Texto de los botones de la barra de navegacion */
+.barraNavegacionItem a{
+  transition: all 0.3s ease 0s;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/* Parrafo buscar recetas*/
+.barraNavegacionItemP{
+  color: #ffffff;
+}
+
+/* Lo que ocurre cuando se pasa el mouse por un boton de la barra */
+.barraNavegacionItem a:hover{
+  color: #706565;
+}
+
+/* Decoracion que tienen los iconos de la barra */
+.barraNavegacionIconos{
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+/* Decoracion de la entrada de texto del buscador */
+.buscadorEntrada{
+  background: #fff;
+  width: 250px;
+  height: 25px;
+  border: none;
+  outline: none;
+  text-align: center;
+  border-radius: 25px;
+}
+
+/* Decoracion del boton del buscador */
+.buscadorBoton{
+  border-radius: 25px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: #b17113;
+  transition: .5s;
+}
+
+/* Decoracion de cuando se pasa por encima el boton de buscar */
+.buscadorBoton:hover{
+  background-color: #b17213a2;
+}
+
+/* Decoracion de la imagen del boton */
+.buscadorBoton img{
+  width: 20px;
+  height: 20px;
+  padding: 2px;
+  vertical-align: middle;
+}
+
+/*=========================*/
+/* MENU DESLIZANTE */
+/*=========================*/
+
+/* Ajusta la posicion de todo el menu */
+.contenedorMenuDeslizante{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+/* Estilo de las banderas del menu */
+.menuDeslizanteBanderas{
+  height: 32px;
+  width: 32px;
+  margin-right: 15px;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+
+/* Oculta el checkbox del boton */
+.botonHamburguesa{
+  top: 10px;
+  left: 15px;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  opacity: 0;
+  z-index: 3;
+  cursor: pointer;
+}
+
+/* Estilo del boton */
+.iconoHamburguesa{
+  position: relative;
+  top: 10px;
+  left: 15px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilo del icono del boton */
+.iconoHamburguesa img{
+  width: 25px;
+  height: 25px;
+}
+
+/* Lo que pasa en el menu cuando se presiona el boton */
+.botonHamburguesa:checked ~ .menuDeslizante{
+  width: 220px;
+}
+
+/* Lo que le pasa al header cuando se presiona el boton */
+.botonHamburguesa:checked ~ .menuDeslizante .menuDeslizanteHeader .menuDeslizanteTextHeader{
+  visibility: visible;
+}
+
+
+/* Configuracion inicial del menu */
+.menuDeslizante{
+  background:#df902a;
+  width: 56px;
+  height: 100%;
+  position: fixed;
+  top: 50px;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  transition: width .2s linear;
+}
+
+/* Estilo de la tabla del menu deslizante */
+.menuDeslizanteTabla{
+  list-style: none;
+}
+
+/* Estilo de los items del menu deslizante */
+.menuDeslizanteItemTabla{
+  position: relative;
+  display: block;
+  width: 220px;
+  height: 42px;
+  margin-top: 25px;
+  cursor: pointer;
+  padding-top: 5px;
+  transition: 0.5s;
+}
+
+/* Estilo de los items cuando se pasa sobre ellos */
+.menuDeslizanteItemTabla:hover{
+  background-color: #5a5a5a5b;
+  border-radius: 15px;
+  transform: scale(1.08);
+}
+
+/* Estilo del texto de cada item de la tabla */
+.menuDeslizanteItemTabla a{
+  text-decoration: none;
+  color: #fff;
+}
+
+/* Estilo del texto de los items cuando se pasa el mouse por encima */
+.menuDeslizanteItemTabla a:hover{
+  color: white;
+}
+
+/* Estilo del header el menu */
+.menuDeslizanteHeader{
+  width: 220px;
+  height: 50px;
+   background-color: #c27e25;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: default;
+}
+
+/* Estilo del texto del header del menu */
+.menuDeslizanteHeader .menuDeslizanteTextHeader{
+  color: #fff;
+  visibility: hidden;
+
+}
+
+/* Estilo del footer del menu deslizante */
+.menuDeslizanteFooter{
+  background-color: #c27e25;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  height: 50px;
+}
+
+/* Estilo del texto del footer del menu deslizante */
+.menuDeslizanteFooter p{
+  width: 220px;
+  text-align: center;
+  color: #fff;
+  font-size: 13px;
+}

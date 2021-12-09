@@ -1,0 +1,10 @@
+### Chef login
+POST http://localhost:8081/login HTTP/1.1
+Accept: */*
+Content-Type: application/x-www-form-urlencoded
+
+username=daniel&password=123
+
+### Chef logout 
+POST http://localhost:8081/logout HTTP/1.1
+Accept: */*

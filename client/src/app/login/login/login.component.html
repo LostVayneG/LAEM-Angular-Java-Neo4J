@@ -1,0 +1,26 @@
+<body>
+    <section class="contenedorLogin">
+        <!-- Seccion izquierda -->
+        <section class="contenedorIzquierdo">
+            <h1 class="contenedorIzquierdoTitulo">Inicia Sesión en LAEM</h1>
+            <p class="contenedorIzquierdoDescripcion">"Cualquiera puede cocinar" - Chef Gusteau</p>
+            <form class="contenedorIzquierdoFormulario" (ngSubmit)="login()">
+                <input [(ngModel)]="user" class="contenedorIzquierdoFormTexto" type="text" name="txtNickname" placeholder="Nickname">
+                <input [(ngModel)]="pass" class="contenedorIzquierdoFormTexto" type="password" name="txtContrasena" placeholder="Contraseña">
+                <button type="submit" name="btnLogin" class="contenedorBoton">Ingresar</button>
+                <div>
+                    <span> {{ mensaje }} </span>
+                </div>
+            </form>
+        </section>
+        <!-- Seccion derecha -->
+        <section class="contenedorDerecho">
+            <h1 class="contenedorDerechoTitulo">¡Bienvenido, Chef!</h1>
+            <img class="logo" src="assets/images/LaemSinFondo.png" >
+            <p class="contenedorDerechoDescripcion">Si no eres parte de nuestra comunidad, ¡regístrate!</p>
+            <button class="contenedorBoton contenedorDerechoBoton" name="btnRegistrar" [routerLink]="['/register']">
+                Registrarse
+            </button>
+        </section>
+    </section>
+</body>

@@ -1,0 +1,122 @@
+<!-- BARRA DE NAVEGACION -->
+<header class="barraNavegacion">
+	<nav class="barraNavegacion">
+	<!-- Logo, chat, mis chefs -->
+	<ul class="barraNavegacionLista">
+		<li class="barraNavegacionItem"></li>
+
+		<li class="barraNavegacionItemLogo">
+		<!-- Logo de la app -->
+		<a class="barraNavegacionLogo">
+			<img src="/assets/images/LaemSinFondo.png" alt="Logo" />
+			LAEM
+		</a>
+		</li>
+		<li class="barraNavegacionItem barraNavegacionItemAnimation">
+		<a *ngIf="false">
+			<img class="barraNavegacionIconos" src="/assets/icons/IconChat.png" alt="" />
+			Chat
+		</a>
+		</li>
+		<li class="barraNavegacionItem barraNavegacionItemAnimation">
+		<a [routerLink]="['/misChefs']">
+			<img
+			class="barraNavegacionIconos"
+			src="/assets/icons/IconSombreroChef.png"
+			alt=""
+			/>
+			Mis Chefs
+		</a>
+		</li>
+	</ul>
+
+	<!-- Buscador de la Barra -->
+	<ul class="barraNavegacionLista">
+		<li class="barraNavegacionItem">
+		<p class="barraNavegacionItemP">Buscar Recetas:</p>
+		</li>
+		<li class="barraNavegacionItem">
+		<form (ngSubmit)="buscarPorEtiqueta()">
+			<input
+			class="buscadorEntrada"
+			type="text"
+			name="textEntradaBuscador"
+      placeholder="Receta"
+      [(ngModel)]="tag"
+			/>
+			<button
+			class="buscadorBoton barraNavegacionItemAnimation"
+			type="submit"
+			>
+			<img src="/assets/icons/IconBuscar.png" alt="" />
+			</button>
+		</form>
+		</li>
+	</ul>
+
+	<!-- Perfil, home, cerrar sesión -->
+	<ul class="barraNavegacionLista">
+		<li class="barraNavegacionItem barraNavegacionItemAnimation">
+		<a (click)="verPerfil()">
+			<img
+			class="barraNavegacionIconos"
+			src="/assets/icons/IconUsuario.png"
+			alt=""
+			/>
+			{{chef.nickname}}
+		</a>
+		</li>
+		<li class="barraNavegacionItem barraNavegacionItemAnimation">
+		<a [routerLink]="['/inicio']">
+			<img class="barraNavegacionIconos" src="/assets/icons/IconCasa.png" alt="" />
+			Inicio
+		</a>
+		</li>
+		<li class="barraNavegacionItem barraNavegacionItemAnimation">
+		<a (click)="logout()">
+			<img
+			class="barraNavegacionIconos"
+			src="/assets/icons/IconSalir.png"
+			alt="Cerrar Sesion"
+			/>
+			Cerrar Sesion
+		</a>
+		</li>
+	</ul>
+	</nav>
+</header>
+
+<!-- MENU DESLIZANTE -->
+<div class="contenedorMenuDeslizante">
+
+  <!-- Boton del menu deslizante -->
+  <input class="botonHamburguesa" type="checkbox">
+  <div class="iconoHamburguesa">
+      <img src="/assets/icons/IconMenuDeslizante.png" alt="#">
+  </div>
+
+  <!-- Contenido del menu deslizante -->
+  <div class="menuDeslizante">
+
+      <!-- Header del menu deslizante -->
+      <header class="menuDeslizanteHeader">
+          <p class="menuDeslizanteTextHeader">Paises Hispanohablantes</p>
+      </header>
+
+      <!-- Items del menu deslizante -->
+      <ul class="menuDeslizanteTabla">
+          <li *ngFor="let pais of paises" class="menuDeslizanteItemTabla">
+              <a (click)="buscarPorPais(pais.id)">
+                  <img class="menuDeslizanteBanderas" [src]="ubicacionPaises+pais.nombre+'.png'" alt="">
+                  {{pais.nombre}}
+              </a>
+          </li>
+      </ul>
+
+      <!-- Footer  del menu deslizante -->
+      <footer class="menuDeslizanteFooter">
+          <p>© LAEM</p>
+      </footer>
+  </div>
+</div>
+

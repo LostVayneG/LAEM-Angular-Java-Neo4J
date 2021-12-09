@@ -1,0 +1,293 @@
+
+/*=========================*/
+/* Se aplica a todo */
+/*=========================*/
+
+*{
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  font-family: 'fuente';
+}
+
+/*=========================*/
+/* CONTENEDOR VER PERFIL */
+/*=========================*/
+.verPerfil{
+  margin-top: 55px;
+  margin-left: 60px;
+  display: flex;
+}
+
+/*=========================*/
+/* SECCION RECETAS -> panel izquierdo */
+/*=========================*/
+.recetas{
+  width: 70%;
+  padding: 40px;
+  border-right-style: solid;
+  border-right-color: rgb(128, 128, 128, 0.3);
+}
+
+/*=========================*/
+/* SECCION RECETAS ARRIBA*/
+/*=========================*/
+.infoChef{
+  border-bottom-color: rgb(128, 128, 128, 0.3);
+  border-bottom-style: solid;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.infoChefArriba{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.infoChefValoracionNick{
+  font-weight: bold;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Imagen de las estrellas */
+.infoChefArriba img{
+  width: 150px;
+  height: 30px;
+  vertical-align: middle;
+}
+
+.btnPublicarReceta{
+  border-radius: 20px;
+  width: 100%;
+  border-style: solid;
+  border-color: #ffffff;
+  background-color:  #f69314;
+  color: #ffffff;
+  transition: .3s;
+  font-size: 20px;
+}
+
+.btnPublicarReceta:hover{
+  transform: scale(1.05);
+  background-color: #b17113;
+}
+
+.btnPublicarReceta img{
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+}
+
+.listaDatos{
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+/*=========================*/
+/* SECCION RECETAS TABLA */
+/*=========================*/
+
+/*Ícono de publicación negro */
+.tituloPublicaciones img{
+  width: 20px;
+  height: 20px;
+}
+
+/* Título "Publicaciones" */
+.tituloPublicaciones{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* Mensaje si no hay recetas*/
+.listaRecetaMensaje{
+  font-size: 30px;
+  text-align: center;
+  color: grey;
+}
+
+/* Tabla que contiene las publicaciones */
+.tablaPublicaciones{
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 30px;
+}
+
+.filaPublicaciones{
+  width: 70px;
+  height: 100px;
+}
+
+/* Esta tarjeta contiene la información de una publicación */
+.tarjetaPublicacion{
+  background-color: #fff;
+  border-radius: 20px;
+  -webkit-box-shadow: 6px 6px 14px -1px rgba(36,35,34,0.82);
+  -moz-box-shadow: 6px 6px 14px -1px rgba(36,35,34,0.82);
+  box-shadow: 6px 6px 14px -1px rgba(36,35,34,0.82);
+  width: 70px;
+  height: 90px;
+  padding: 2%;
+}
+.tarjetaPublicacion:hover{
+  transform: scale(1.05);
+}
+
+/* Imagen de la publicación */
+.tarjetaPublicacion img{
+  object-fit: cover;
+  object-position: 50% 50%;
+  width: 100%;
+  height: 180px;
+}
+
+.publicacionNick{
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.publicacionNick img{
+  margin-right: 20px;
+  margin-left: 20px;
+  width: 30px;
+  height: 30px;
+}
+
+.publicacionTitulo{
+  text-align: center;
+  font-weight: bold;
+  color: #f69314;
+}
+
+.publicacionDescripcion{
+  text-align: justify;
+  font-size: small;
+  width: 100%;
+  /*height: 205%;*/
+  overflow: hidden;
+}
+
+.publicacionBarraInferior{
+  text-align: right;
+}
+
+.btnEditarReceta{
+  border-radius: 20px;
+  width: 40px;
+  height: 40px;
+  padding: 1px;
+  border-style: solid;
+  border-color: #ffffff;
+  background-color:  #f69314;
+  color: #ffffff;
+  transition: .3s;
+}
+
+.btnEditarReceta:hover{
+  transform: scale(1.05);
+  background-color: #b17113;
+}
+
+.btnEditarReceta img{
+  width: 30px;
+  height: 30px;
+  text-align: right;
+}
+
+/*=========================*/
+/* SECCION PANEL DERECHO */
+/*=========================*/
+
+
+/* Panel derecho */
+.infoPerfil{
+  width: 30%;
+  height: 100%;
+  margin: 10px;
+  padding:60px;
+  position: fixed;
+  margin-left: 70%;
+}
+
+/* Imagen y nickname */
+.infoPerfilfoto{
+  width: 100%;
+  height: 50%;
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  flex-direction: column;
+  vertical-align: middle;
+  border-style: solid;
+  border-color: rgb(128, 128, 128, 0.3);
+  border-radius: 20px;
+  justify-content: space-around;
+}
+
+.fotoPerfil{
+  width: 40%;
+}
+
+.infoPerfilNickname{
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.infoPerfilRango{
+  font-weight: bold;
+  font-size: 25px;
+}
+
+/*==================================================*/
+/* SECCION DE LOS DATOS PERSONALES EN EL PANEL DERECHO*/
+/*==================================================*/
+
+.datosPersonales{
+  padding: 40px;
+  margin-top: 20px;
+  padding-top: 10px;
+  width: 100%;
+  height: 50%;
+  border-style: solid;
+  border-color: rgb(128, 128, 128, 0.3);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+
+.infoPerfilbtnEditar{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.btnEditarDatos{
+  border-radius: 20px;
+  width: 100%;
+  border-style: solid;
+  border-color: #ffffff;
+  background-color:  #f69314;
+  color: #ffffff;
+  transition: .3s;
+  font-size: 20px;
+}
+
+.btnEditarDatos:hover{
+  transform: scale(1.05);
+  background-color: #b17113;
+}

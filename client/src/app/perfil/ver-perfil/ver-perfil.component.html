@@ -1,0 +1,121 @@
+<app-barra-navegacion></app-barra-navegacion>
+
+<!-- Pantalla que permite ver el perfil del usuario -->
+<div class="verPerfil">
+
+  <!-- Sección panel izquierdo -->
+  <div class="recetas">
+
+    <!-- Sección con información de las estrellas, nickname, y el botón de publicar recetas -->
+    <div class="infoChef">
+      <div class="infoChefArriba">
+        <p class="infoChefValoracionNick">{{chef.nickname}}
+          <img [src]="imagenValoracion" alt="">
+        </p>
+        <form>
+          <div *ngIf="miPerfil==true ; else notShow ">
+            <button  [routerLink]="['/publicacion/crear']" class="btnPublicarReceta">
+              <img src="/assets/icons/IconPublicarReceta.png" alt="">
+              {{mensaje}}
+            </button>
+          </div>
+          <ng-template #notShow>
+            <button (click)="accionSeguidor()" class="btnPublicarReceta">
+              <img src="/assets/icons/IconMas.png" alt="">
+              {{mensaje}}
+            </button>
+          </ng-template>
+          <button  [routerLink]="['/favoritos', chef.id]" class="btnPublicarReceta">
+            <img src="/assets/icons/IconPublicarReceta.png" alt="">
+            Favoritos
+          </button>
+        </form>
+      </div>
+
+      <!-- Esta lista contiene #seguidores #seguidos #publicaciones -->
+      <ul class="listaDatos">
+        <li class="itemDato">
+          <p>
+            <img src="" alt="">
+            Seguidores: {{chef.numeroSeguidores}}
+          </p>
+
+        </li>
+        <li class="itemDato">
+          <p>
+            <img src="" alt="">
+            Seguidos: {{chef.numeroSeguidos}}
+          </p>
+        </li>
+        <li class="itemDato">
+          <p>
+            <img src="" alt="">
+            Publicaciones: {{chef.numeroPublicaciones}}
+          </p>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Sección que contiene todas las tarjetas de las recetas del chef -->
+    <div class="listaRecetas">
+      <h3 class="tituloPublicaciones">
+        <img src="/assets/icons/IconPublicarRecetaNegro.png" alt="">
+        Publicaciones:
+      </h3>
+
+      <!-- Tabla de publicaciones -->
+      <!-- Si no tiene publicaciones, se muestra un texto -->
+      <p *ngIf="publicaciones.length == 0" class="listaRecetaMensaje" > Este usuario no tiene publicaciones </p>
+      <table class="tablaPublicaciones">
+
+        <tr *ngFor="let pRow of publicaciones" class="filaPublicaciones" >
+
+          <!-- TARJETA PUBLICACION -->
+          <td class="tarjetaPublicacion" *ngFor="let publicacion of pRow" [routerLink]="['/publicacion/ver', publicacion.id]" >
+            <p class="publicacionNick">
+              <img src="/assets/icons/IconUsuarioNegro.png" alt="">
+              {{chef.nickname}}
+            </p>
+            <p class="publicacionTitulo" >{{publicacion.titulo}} </p>
+            <p class="publicacionDescripcion">{{publicacion.descripcion}}</p>
+            <img [src]="imagen[publicacion.id]" alt="">
+            <div class="publicacionBarraInferior">
+              <form>
+                <!-- Si el usuario esta viendo un perfil ajeno se oculta el boton de editar publicación -->
+                <button *ngIf="miPerfil==true" [routerLink]="['/publicacion/editar',publicacion.id]" class="btnEditarReceta">
+                  <img src="/assets/icons/IconLapiz.png" alt="">
+                </button>
+              </form>
+            </div>
+          </td>
+
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Línea que divide los dos páneles -->
+  <div class="visionPaneles"></div>
+
+
+  <!-- Sección panel derecho  -->
+  <div class="infoPerfil">
+    <!-- Sección superior (Rango, foto y nickname) -->
+    <div class="infoPerfilfoto">
+      <p class="infoPerfilRango"> Rango: {{chef.rango}} </p>
+      <img class="fotoPerfil" src="/assets/icons/IconUsuarioNegro.png" alt="">
+      <p class="infoPerfilNickname"> {{chef.nickname}} </p>
+    </div>
+    <!-- Sección inferior (Datos personales) -->
+    <div class="datosPersonales">
+      <p> Nombre completo: {{chef.nombre}}</p>
+      <p> Genero: {{chef.genero}}</p>
+      <p *ngIf=" chef.celular!=undefined "> Celular: {{chef.celular}}</p>
+      <form class="infoPerfilbtnEditar">
+        <button *ngIf="miPerfil==true" class="btnEditarDatos" [routerLink]="['/perfil/editar']">
+          Editar Datos
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

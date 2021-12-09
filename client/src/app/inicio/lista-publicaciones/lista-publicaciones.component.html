@@ -1,0 +1,31 @@
+<!-- SECCION PUBLICACIONES -->
+<div class="menuInicio">
+  <div *ngFor="let publicacion of publicaciones" class="publicacion">
+    <a [routerLink]="['/publicacion/ver', publicacion.id]">
+      <div class="publicacionImagen">
+        <!-- <img src="/assets/images/Prueba.png" alt=""> -->
+        <img [src]="imagenes[ publicacion.id ]" alt="" />
+        <p class="publicacionTitulo">{{publicacion.titulo}}</p>
+      </div>
+    </a>
+    <div class="publicacionDatos">
+      <div class="publicacionDatosUsuario">
+        <a [routerLink]="['/perfil/ver', publicacion.chef.id]">
+          <p class="publicacionUsuario">
+            <img src="/assets/icons/IconUsuarioNegro.png" alt="" />
+            {{publicacion.chef.nickname}}
+          </p>
+        </a>
+        <p class="publicacionFecha">{{publicacion.fecha}}</p>
+      </div>
+        <div class="publicacionDatosDuracion">
+          <p class="publicacionDuracionTitulo">Duración:</p>
+          <p class="publicacionDuracion">{{publicacion.duracion}}</p>
+        </div>
+        <div class="publicacionDatosDescripcion">
+          <p class="publicacionDescripcionTitulo">Descripción</p>
+          <!-- Aca se debe limitar la cantidad de caracteres -->
+          <p class="publicacionDescripcion">{{publicacion.descripcion}} </p> <a [routerLink]="['/publicacion/ver', publicacion.id]">Ver más</a>
+        </div>
+    </div>
+	</div>

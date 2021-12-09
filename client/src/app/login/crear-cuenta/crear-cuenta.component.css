@@ -1,0 +1,150 @@
+/*------------------------*/
+/*=======================================
+ DECLARACION DE FONT Y REINICIO DE PAGINA
+========================================*/
+@font-face{
+    font-family: 'fuenteLogin';
+    src: url('/assets/fonts/Gotu/Gotu-Regular.ttf');
+}
+*{
+    box-sizing: 0;
+    top: 0;
+    left: 0;
+    font-family: 'fuenteLogin';
+}
+
+/*=======================================
+        BACKGROUND DE LA PAGINA
+========================================*/
+body{
+    background-image: url('/assets/images/FondoLandingPage.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #b17113;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*=======================================
+    CLASES CSS DE LA VENTANA REGISTRAR
+========================================*/
+.contenedorCrearCuenta{
+    background-color: rgba(255, 255, 255, 0.95);
+    padding-left:10%;
+    padding-right:10%;
+    border-radius: 20px;
+    font-family: 'fuenteLogin';
+}
+.tituloFormulario{
+    text-align: center;
+    color: #f69314;
+    font-style: bold;
+    font-size: 160%;
+    margin-bottom: 5px;
+}
+/*=======================================
+            CSS DE FORMULARIO
+========================================*/
+.contenedorFormulario{
+    padding-top: 0%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
+    width: 120%;
+    display: flex;
+    flex-direction: row;
+    font-family: 'fuenteLogin';
+}
+.formulario{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/*=======================================
+        CSS FORMULARIO IZQUIERDO
+========================================*/
+.contenedorSeccionFormularioIzquierdo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    border-style: none;
+    border-right-style: solid;
+    border-right-color: black;
+    padding: 2%;
+    width: 50%;
+}
+.tituloSeccionFormulario{
+    text-align: justify;
+    font-style: bold;
+    font-size: 110%;
+    margin-bottom: 5px;
+}
+.txtForm{
+    background-color: rgba(255, 255, 255, 0.95);
+    border-style: solid;
+    border-radius: 10px;
+    border-color: #f3dfc0;
+    padding: 7px;
+    width: 85%;
+    margin-left: 20px;
+    margin-bottom: 5px;
+}
+.spanForm{
+    color: #fd3e04;
+    font-size: 100%;
+}
+/*=======================================
+        CSS FORMULARIO DERECHO
+========================================*/
+.contenedorSeccionFormularioDerecho{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    padding: 2%;
+    margin-left: 20px;
+    width: 50%;
+}
+.contenedorSeccionFormularioDerechoRadio{
+    display: flex;
+    flex-direction: row;
+}
+.textoGenero{
+    font-size: 90%;
+    margin-left: 20px;
+    margin-bottom: 0px;
+}
+.generoChef{
+    border: 1px solid #ccc;
+    width: 120px;
+    overflow: hidden;
+    background-color: #fff;
+    border-color: #f3dfc0;
+    border-radius: 10px;
+    margin-left:20px;
+    margin-bottom: 10px;
+}
+
+/*=======================================
+            CSS BOTON REGISTRAR
+========================================*/
+.botonRegistrar{
+    border-radius: 20px;
+    width: 30%;
+    height: 35px;
+    border-style: solid;
+    border-color: #ffffff;
+    background-color: #f69314;
+    color: #ffffff;
+    transition: .3s;
+    margin-bottom:5%;
+}
+
+.botonRegistrar:hover{
+    transform: scale(1.05);
+    background-color: #b17113;
+}

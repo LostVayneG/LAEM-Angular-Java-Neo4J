@@ -1,0 +1,71 @@
+<!--Contenedor top de recetas-->
+<section *ngIf="topRecetas == true" class="contenedorTarjetas">
+  <!-- Tabla de tarjetas -->
+  <!-- Si no se encontraron publicaciones, se muestra un texto -->
+  <p *ngIf="resultados.length == 0" class="resultadoVacio" > No se encontraron publicaciones. </p>
+    <!--Tabla tarjetas-->
+    <table class="tablaTarjetas">
+        <!--Fila Tarjetas-->
+        <tr *ngFor="let pRow of resultados" class ="filaTarjetas">
+            <!--Tarjeta-->
+            <td *ngFor="let publicacion of pRow" class="tarjetaBusquedaPais" [routerLink]="['/publicacion/ver', publicacion.id]">
+                <!--Tarjeta parte frontal-->
+                <section class="tarjetaBusquedaPaisFrontal">
+                    <img class="imagenTarjetaBusquedaPais" [src]="imagen[publicacion.id]" alt="">
+                    <!--Contenedor elipsoidal-->
+                    <section class="tarjetaBusquedaPaisParteInferior">
+                        <p class="sombraFrontal"> {{publicacion.titulo}} </p>
+                        <section class="valoracionTarjetaBusquedaPais">
+                            <img src="/assets/icons/IconEstrellaTarjeta.png" alt="">
+                            <p class="sombraFrontal">{{publicacion.valoracion}}</p>
+                        </section>
+                    </section>
+                </section>
+                <!--Tarjeta parte dorsal-->
+                <section class="tarjetaBusquedaPaisDorsal">
+                  <p class="sombra">{{publicacion.chef.nombre}}</p>
+                  <!--Lista de 3 etiquetas receta-->
+                  <ul *ngFor="let etiqueta of publicacion.etiquetas.slice(0,3)" class="listaTarjetaEtiquetas">
+                      <li class="sombra">
+                          <p class="etiquetaTarjeta">#{{etiqueta.tag}}</p>
+                      </li>
+                  </ul>
+              </section>
+            </td>
+        </tr>
+    </table>
+</section>
+<!--Contenedor top de chefs-->
+<section *ngIf="topRecetas == false" class="contenedorTarjetas">
+  <!-- Tabla de tarjetas -->
+  <!-- Si no se encontraron publicaciones, se muestra un texto -->
+  <p *ngIf="chefs.length == 0" class="resultadoVacio" > No se encontraron chefs. </p>
+    <!--Tabla tarjetas-->
+    <table class="tablaTarjetas">
+        <!--Fila Tarjetas-->
+        <tr *ngFor="let pRow of chefs" class ="filaTarjetas">
+            <!--Tarjeta-->
+            <td *ngFor="let chef of pRow" class="tarjetaBusquedaPais" [routerLink]="['/perfil/ver', chef.id]">
+                <!--Tarjeta parte frontal-->
+                <section class="tarjetaBusquedaPaisFrontal">
+                    <img class="imagenTarjetaBusquedaPais" src="/assets/icons/IconUsuario2.png" alt="">
+                    <!--Contenedor elipsoidal-->
+                    <section class="tarjetaBusquedaPaisParteInferior">
+                        <p class="sombraFrontal"> {{chef.nickname}} </p>
+                        <section class="valoracionTarjetaBusquedaPais">
+                            <img src="/assets/icons/IconEstrellaTarjeta.png" alt="">
+                            <p class="sombraFrontal">{{chef.valoracion}}</p>
+                        </section>
+                    </section>
+                </section>
+                <!--Tarjeta parte dorsal-->
+                <section class="tarjetaBusquedaPaisDorsal">
+                  <p class="sombra">{{chef.nombre}}</p>
+                  <p class="sombra">Rango: {{chef.rango}}</p>
+                  <p class="sombra">Seguidores: {{chef.numeroSeguidores}}</p>
+                  <p class="sombra">Publicaciones: {{chef.numeroPublicaciones}}</p>
+              </section>
+            </td>
+        </tr>
+    </table>
+</section>

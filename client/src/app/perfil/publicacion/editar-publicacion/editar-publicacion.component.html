@@ -1,0 +1,139 @@
+<app-barra-navegacion></app-barra-navegacion>
+
+
+<section class="contenedorCrearPublicacion">
+    <form class="formularioPublicar" >
+
+        <section class="contenedorIzquierdo">
+            <p class="tituloIzquierda"> Editar publicación en LAEM </p>
+
+            <P class="tituloInformacionReceta">Información de la receta:</P>
+            <!--Campo Titulo-->
+            <section class="labelsText">
+                <img src="assets/icons/IconLibro.png" alt="">
+                <p class="textoLabel">Título: </p>
+            </section>
+            <input [(ngModel)]="publicacion.titulo" name="titulo" class="campoText" type="text" placeholder="Ingrese el título...">
+
+            <!--Campo Duración-->
+            <section class="labelsText">
+                <img src="assets/icons/IconReloj.png" alt="">
+                <p class="textoLabel">Duración de la receta: </p>
+            </section>
+            <input [(ngModel)]="publicacion.duracion" name="duracion" class="campoText" type="text" placeholder="Ingrese la duración...">
+
+            <!--Campo País-->
+            <section class="labelsText">
+                <img src="assets/icons/IconPais.png" alt="">
+                <p class="textoLabel">País: </p>
+            </section>
+            <select  class="comboBoxPais">
+                <option *ngFor="let pais of paises" value="pais.nombre">{{pais.nombre}}</option>
+              </select>
+
+            <!--Campo Etiquetas-->
+            <section class="contenedorEtiquetas">
+                <!--Label Etiquetas-->
+                <section class="labelsTextEtiquetas">
+                    <section class="labelsText">
+                        <img src="assets/icons/IconEtiqueta.png" alt="">
+                        <p class="textoLabel">Etiquetas: </p>
+                    </section>
+                    <input class="campoText" name="tag" [(ngModel)]="tag" placeholder="#IngreseEtiqueta" >
+                    <button (click)="addTag()" class="btnAñadirItem">
+                        <img class="imgAñadirItem" src="assets/icons/IconMas.png" alt="">
+                    </button>
+                </section>
+
+                 <!--Lista de etiquetas-->
+                <section class="contenedorListaEtiquetas">
+                    <ul class="listaEtiquetas">
+                        <li *ngFor="let etiquetaActual of publicacion.etiquetas" (click)="deleteTag(etiquetaActual)"> {{etiquetaActual.tag}}  </li>
+                    </ul>
+                </section>
+            </section>
+
+            <!-- Aquí finaliza el panel izquierdo -->
+        </section>
+
+
+        <!-- ------------------------------- PARTE DERECHA --------------------------------- -->
+
+        <!-- Panel derecho -->
+        <section class="contenedorDerecho">
+            <p class="txtTituloReceta"> {{publicacion.titulo}} </p>
+            <!-- Descripción -->
+            <section class="contenedoresDerecha descripcion">
+                <p class="TituloContenedores">Descripción</p>
+                <textarea class="inputDescripcion" name="descripcion" [(ngModel)]="publicacion.descripcion" placeholder="Ingrese la descripción de"></textarea>
+            </section>
+
+            <!-- Ingredientes -->
+            <section class="contenedoresDerecha">
+                <p class="TituloContenedores">Ingredientes</p>
+                <section class="lblInputItem">
+                    <input [(ngModel)]="ingrediente" name="ingrediente" class="campoText" placeholder="Ingrese un ingrediente...">
+                    <button (click)="addIngrediente()" class="btnAñadirItem">
+                        <img class="imgAñadirItem" src="assets/icons/IconMas.png" alt="">
+                    </button>
+                </section>
+                <!--Lista de ingredientes-->
+                <section class="contenedorLista">
+                    <ul class="listaItems">
+                        <li *ngFor="let ingredienteActual of publicacion.ingredientes" (click)="deleteIngrediente(ingredienteActual)"> {{ingredienteActual}}  </li>
+                    </ul>
+                </section>
+            </section>
+
+            <!-- Procedimiento -->
+            <section class="contenedoresDerecha">
+                <p class="TituloContenedores">Procedimiento</p>
+                <section class="lblInputItem">
+                    <input [(ngModel)]="paso" name="paso" class="campoText" >
+                    <button (click)="addPaso()" class="btnAñadirItem">
+                        <img class="imgAñadirItem" src="assets/icons/IconMas.png" alt="">
+                    </button>
+                </section>
+                <!--Lista de pasos-->
+                <section class="contenedorLista">
+                    <ol class="listaPasos">
+                        <li *ngFor="let pasoActual of publicacion.preparacion" (click)="deletePaso(pasoActual)"> {{pasoActual}}  </li>
+                    </ol>
+                </section>
+            </section>
+
+            <!--Campo de archivos-->
+            <section class="contenedoresDerecha" id="contenedorSubirArchivo">
+              <section class="dentroContenedorSubirArchivo">
+                <div class="drag-drop">
+                  <input  type="file" name="file" id="file" multiple="multiple" class="btnSubirArchivo" (change)="selectFile($event)" />
+                  <label for="file" class="lblSubirArchivo"><img for="file" class="imagenNube" src="assets/icons/IconNube.png"><p>Subir archivo</p></label>
+                  <!---->
+
+                </div>
+                <div class="alert alert-light" role="alert"></div>
+              </section>
+          </section>
+
+            <!-- Contenedor video -->
+            <section class="contenedoresDerecha video">
+                <p class="TituloContenedores">Link al video (opcional)</p>
+                <input type="text" name="video" class="campoText" [(ngModel)]="publicacion.url" placeholder="www.youtube.com/esto-es/un-ejemplo">
+                <button class="btnAñadirItem" (click)="addVideo()">
+                <img class="imgAñadirItem" src="assets/icons/IconMas.png" alt=""></button>
+            </section>
+
+            <section>
+              <iframe *ngIf="video == true"  width="515" height="315" [src]='previewVideo()' frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </section>
+
+            <!--Cambiar estos botones-->
+            <button class="btnFinal" (click)="editarPublicacion()">Editar</button>
+            <button class="btnFinal" (click)="eliminarPublicacion()">Eliminar</button>
+            <button class="btnFinal" (click)="cancelar()">Cancelar</button>
+
+        <!-- Fin del contenedor derecho -->
+        </section>
+    </form>
+    <!-- Fin de la sección crear publicación -->
+</section>

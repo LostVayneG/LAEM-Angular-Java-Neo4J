@@ -1,0 +1,26 @@
+<aside class="contenedorAccesos">
+  <!-- Menu de accesos -->
+  <ul class="menuAccesosLista">
+    <li class="menuAccesosItemHeader">
+      <a class="menuAccesosItemsText menuAccesosItemHeaderText">
+        Accesos
+      </a>
+    </li>
+    <li class="menuAccesosItems">
+      <a class="menuAccesosItemsText" [routerLink]="['/top/recetas']" >
+        <img class="menuAccesosIconos" src="/assets/icons/IconReceta.png" alt="" />
+        Top Recetas
+      </a>
+    </li>
+    <li class="menuAccesosItems">
+      <a class="menuAccesosItemsText" [routerLink]="['/top/chefs']">
+        <img
+          class="menuAccesosIconos"
+          src="/assets/icons/IconSombreroChef.png"
+          alt=""
+        />
+        Top Chefs
+      </a>
+    </li>
+  </ul>
+</aside>

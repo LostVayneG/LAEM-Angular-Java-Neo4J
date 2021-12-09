@@ -1,0 +1,14 @@
+###Esta es una peticion para crear una etiqueta
+POST http://localhost:8081/etiqueta/7
+Content-Type: application/json
+
+{
+    "tag":"pollo"
+}
+
+###Esta es una peticion de etiquetas 
+GET http://localhost:8081/etiqueta/pollo
+
+###Esta es una peticion de etiquetas 
+DELETE http://localhost:8081/etiqueta/7/2
+Content-Type: application/json
